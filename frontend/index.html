@@ -7,10 +7,33 @@
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
+    <header class="toolbar">
+      <div class="brand">BanAI <span>Wardrobe Designer</span></div>
+      <div class="toolbar-note">AI agent and saving are not connected yet</div>
+    </header>
     <main class="workspace">
-      <aside class="panel" id="chat-panel"><h2>AI Designer</h2></aside>
-      <section class="viewer" id="viewer"></section>
-      <aside class="panel" id="properties-panel"><h2>Properties</h2></aside>
+      <aside class="panel chat" id="chat-panel" aria-label="AI Designer">
+        <div class="title-row"><h2 class="panel-title">AI Designer</h2><span class="status">Local preview</span></div>
+        <div class="chat-log" aria-live="polite"></div>
+        <div class="chat-foot">
+          <button type="button" class="btn tonal" data-basic>Start with a basic wardrobe</button>
+          <form>
+            <textarea rows="1" placeholder="Describe your wardrobe…" aria-label="Message"></textarea>
+            <button type="submit" class="send" aria-label="Send">↑</button>
+          </form>
+        </div>
+      </aside>
+      <section class="viewer" id="viewer" aria-label="3D viewer">
+        <div class="overlay" id="overlay">
+          <span class="chip" data-dim="w"></span><span class="chip" data-dim="h"></span><span class="chip" data-dim="d"></span>
+        </div>
+        <div class="viewer-controls">
+          <label class="pill"><input type="checkbox" id="toggle-doors" checked /> Doors</label>
+          <button type="button" class="pill" id="reset-view">Reset view</button>
+        </div>
+        <div class="viewer-hint">Drag to rotate · Scroll to zoom · Click to select</div>
+      </section>
+      <aside class="panel props" id="properties-panel" aria-label="Properties"></aside>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>
