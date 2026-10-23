@@ -159,19 +159,7 @@ test.describe('door configurations render with hardware', () => {
   });
 });
 
-test.describe('save and render dialogs (backend phases not built yet)', () => {
-  test('Save opens a dialog that is honest about being unavailable, with no fake link', async ({ page }) => {
-    await openDesigner(page);
-    await page.getByTestId('open-save').click();
-    const dialog = page.getByTestId('save-dialog');
-    await expect(dialog).toBeVisible();
-    await expect(dialog).toContainText('Saving is not available yet');
-    await expect(page.getByTestId('share-link')).toHaveValue('');
-    await expect(page.getByTestId('save-confirm')).toBeDisabled();
-    await page.getByTestId('save-close').click();
-    await expect(dialog).toBeHidden();
-  });
-
+test.describe('render dialog (backend phase not built yet)', () => {
   test('Render opens a dialog labelled as illustrative, with generation disabled', async ({ page }) => {
     await openDesigner(page);
     await page.getByTestId('open-render').click();

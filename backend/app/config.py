@@ -21,6 +21,13 @@ class Settings(BaseSettings):
     openai_transcribe_model: str = ""
     openai_tts_model: str = ""
     openai_tts_voice: str = ""
+    # Saved designs (Phase 7). Only the backend holds the secret key; the browser never talks to Supabase.
+    supabase_url: str = ""
+    supabase_secret_key: str = ""
+
+    @property
+    def storage_enabled(self) -> bool:
+        return bool(self.supabase_url.strip() and self.supabase_secret_key.strip())
 
     @property
     def cors_origin_list(self) -> list[str]:

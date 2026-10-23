@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" /><!-- the share link carries a token -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BanAI Wardrobe Designer</title>
     <link rel="stylesheet" href="/src/styles/index.css" />
   </head>
   <body>
+    <a class="skip-link" href="#properties-panel">Skip to properties</a>
     <header class="topbar">
       <h1 class="topbar__title" id="topbar-logo" aria-label="BanAI Wardrobe Designer"></h1>
       <div class="topbar__actions">
@@ -18,16 +20,17 @@
         <button type="button" class="btn btn--tonal" id="open-order" data-testid="open-order">Confirm order</button>
         <button type="button" class="btn btn--tonal" id="open-render" data-testid="open-render">Render</button>
         <button type="button" class="btn btn--primary" id="open-save" data-testid="open-save">Save</button>
+        <a class="btn btn--ghost" href="/accessibility.html" lang="he" data-testid="a11y-link">נגישות</a>
       </div>
     </header>
     <div class="banner banner--error" id="error-banner" role="alert" hidden></div>
     <div class="banner banner--order" id="order-banner" data-testid="order-banner" hidden></div>
     <main class="workspace">
-      <aside class="panel" id="chat-panel" aria-label="מעצב AI"></aside>
+      <aside class="panel" id="chat-panel" lang="he" aria-label="מעצב AI"></aside>
       <section class="viewer" id="viewer" aria-label="3D viewer"></section>
-      <aside class="panel panel--properties" id="properties-panel" aria-label="Properties">
+      <aside class="panel panel--properties" id="properties-panel" aria-label="Properties" tabindex="-1">
         <h2 class="panel__title">Properties</h2>
-        <p class="panel__hint">Click a component in the 3D view to edit it.</p>
+        <p class="panel__hint">Select a component in the 3D view, or under All parts below, to edit it.</p>
         <div id="properties-content"></div>
       </aside>
     </main>

@@ -8,4 +8,6 @@
 - Organization: Kindra (`mqmgjlbatfmoxunyepzc`).
 - The CLI is linked to **banai-dev** by default. To target prod, run `supabase link --project-ref lkslzvgypmbjltrtcrec` explicitly, and only for an approved release.
 - DB passwords are kept in the gitignored `.env.supabase` at the repo root, never committed.
-- The schema and security model (RLS deny-all, backend-only access, hashed access tokens) are implemented in Phase 7. See `docs/architecture.md` §7.
+- Schema: `supabase/migrations/20261020120000_designs.sql`, table `public.designs`. RLS is on with no policies, and anon/authenticated have no grants: only the backend reaches it.
+- The backend (`app/persistence/repository.py`) calls PostgREST with `SUPABASE_URL` and `SUPABASE_SECRET_KEY`, set per Railway environment: dev uses banai-dev and production uses banai-prod. `/api/health` reports `storage: true` when they are set.
+- API: `POST /api/designs`, then `GET` / `PUT /api/designs/{id}` with `Authorization: Bearer <token>`. `PUT` also needs `If-Match: <revision>` and returns 409 `STALE` when someone saved in between. A wrong token and a missing design both return the same 404.
