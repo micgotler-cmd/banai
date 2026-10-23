@@ -128,3 +128,16 @@ def test_worst_case_design_renders_quickly():
     pdf = render_pdf(design, catalog, "he", date(2026, 10, 16))
     assert time.perf_counter() - started < 5
     assert len(PdfReader(io.BytesIO(pdf)).pages) > 20  # detail sheets + paginated component list
+
+
+def test_new_catalog_entries_are_named_in_both_languages():
+    catalog = load_catalog()
+    design = apply_ops(load_design("basic"), [
+        {"op": "set_material", "target": "carcass", "material": {"catalogId": "birch_plywood"}, "color": {"catalogId": "sage_green"}},
+        {"op": "set_material", "target": "doors", "color": {"catalogId": "terracotta"}},
+    ], catalog)
+    english = text_of(render_pdf(design, catalog, "en", date(2026, 10, 23)))
+    assert "Birch plywood" in english and "Sage green" in english and "Terracotta" in english
+    hebrew = text_of(render_pdf(design, catalog, "he", date(2026, 10, 23)))
+    for name in ("דיקט ליבנה", "ירוק מרווה", "טרקוטה"):
+        assert name in hebrew or name[::-1] in hebrew

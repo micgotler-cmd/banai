@@ -95,4 +95,17 @@
     "ops": [{ "op": "set_material", "target": "carcass" }],
     "expect": { "error": { "code": "INVALID_OP", "path": "ops[0]" } }
   }
+  ,{
+    "name": "new catalog colours and material are accepted",
+    "base": "two",
+    "ops": [
+      { "op": "set_material", "target": "carcass", "material": { "catalogId": "birch_plywood" }, "color": { "catalogId": "navy_blue" } },
+      { "op": "set_material", "target": "doors", "color": { "catalogId": "terracotta" } },
+      { "op": "set_material", "target": "dr_a", "color": { "catalogId": "sage_green" } }
+    ],
+    "expect": { "match": {
+      "carcass": { "appearance": { "material": { "catalogId": "birch_plywood" }, "color": { "catalogId": "navy_blue" } } },
+      "doors": { "appearance": { "color": { "catalogId": "terracotta" } }, "items": [{ "id": "dr_a", "appearance": { "color": { "catalogId": "sage_green" } } }, {}] }
+    } }
+  }
 ]
