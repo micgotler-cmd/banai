@@ -108,7 +108,7 @@ const he = {
   catalog: {
     melamine: 'לוח מלמין', oak_veneer: 'פורניר אלון', lacquered_mdf: 'MDF צבוע', birch_plywood: 'דיקט ליבנה',
     white: 'לבן', light_grey: 'אפור בהיר', anthracite: 'אנתרציט', black: 'שחור', natural_oak: 'אלון טבעי', walnut: 'אגוז',
-    navy_blue: 'כחול כהה', sage_green: 'ירוק מרווה', terracotta: 'טרקוטה',
+    navy_blue: 'כחול נייבי', sage_green: 'ירוק מרווה', sand_beige: "בז' חול", terracotta: 'טרקוטה',
     matte: 'מט', satin: 'סאטן', gloss: 'מבריק',
   },
 };

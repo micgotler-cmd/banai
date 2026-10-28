@@ -1,8 +1,8 @@
 import { expect, openDesigner, test } from './fixtures.js';
 
 const COLOURS = [
-  { name: 'Navy blue', hex: '1f3a5f', id: 'navy_blue' },
-  { name: 'Sage green', hex: '8a9a7b', id: 'sage_green' },
+  { name: 'Navy blue', hex: '2b3a52', id: 'navy_blue' },
+  { name: 'Sage green', hex: '8f9e83', id: 'sage_green' },
   { name: 'Terracotta', hex: 'b5603f', id: 'terracotta' },
 ];
 

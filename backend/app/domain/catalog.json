@@ -13,8 +13,9 @@
     { "id": "black", "name": "Black", "hex": "#1d1d1f" },
     { "id": "natural_oak", "name": "Natural oak", "hex": "#c49a6c" },
     { "id": "walnut", "name": "Walnut", "hex": "#6b4a32" },
-    { "id": "navy_blue", "name": "Navy blue", "hex": "#1f3a5f" },
-    { "id": "sage_green", "name": "Sage green", "hex": "#8a9a7b" },
+    { "id": "sage_green", "name": "Sage green", "hex": "#8f9e83" },
+    { "id": "navy_blue", "name": "Navy blue", "hex": "#2b3a52" },
+    { "id": "sand_beige", "name": "Sand beige", "hex": "#d9c8ad" },
     { "id": "terracotta", "name": "Terracotta", "hex": "#b5603f" }
   ],
   "finishes": [

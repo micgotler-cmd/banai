@@ -10,7 +10,7 @@ import { catalog, design } from '../pdf/fixtures.js';
 
 // The catalog is owned by the backend (backend/app/domain/catalog.json). These tests read that same file,
 // so adding an entry there must keep the editor ops, the 3D materials and both PDFs in step.
-const NEW_COLOURS = { navy_blue: '1f3a5f', sage_green: '8a9a7b', terracotta: 'b5603f' };
+const NEW_COLOURS = { navy_blue: '2b3a52', sage_green: '8f9e83', sand_beige: 'd9c8ad', terracotta: 'b5603f' };
 const NEW_MATERIAL = 'birch_plywood';
 
 const allIds = () => [...catalog.materials, ...catalog.colors, ...catalog.finishes].map((e) => e.id);

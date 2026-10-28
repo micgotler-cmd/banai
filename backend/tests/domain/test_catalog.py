@@ -9,7 +9,7 @@ from app.domain.errors import DomainError
 from app.export.strings import CATALOG_NAMES
 from tests.domain.conftest import load_design
 
-NEW_COLOURS = {"navy_blue": "#1f3a5f", "sage_green": "#8a9a7b", "terracotta": "#b5603f"}
+NEW_COLOURS = {"navy_blue": "#2b3a52", "sage_green": "#8f9e83", "sand_beige": "#d9c8ad", "terracotta": "#b5603f"}
 NEW_MATERIAL = "birch_plywood"
 
 
